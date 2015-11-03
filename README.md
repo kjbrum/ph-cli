@@ -31,7 +31,7 @@ $ ph --help
 
 ### To-Do
 
-- Prompt user for their dev token and add it to the script
+- Prompt user for their dev token and save it
 - Handle all the endpoints
     - Posts
     - Categories
