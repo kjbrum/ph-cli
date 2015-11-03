@@ -52,7 +52,7 @@ ph( cli.input[0], cli.flags ).then( function( res ) {
                     name: chalk.yellow.bold( val.name ),
                     tagline: chalk.white( val.tagline ),
                     votes: chalk.blue( '(' + val.votes_count + ')' ),
-                    url: chalk.white( '<' + val.discussion_url + '>' )
+                    url: chalk.white( val.discussion_url )
                 };
 
                 console.log( post.name + ' ' + post.votes );
