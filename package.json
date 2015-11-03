@@ -1,0 +1,38 @@
+{
+  "name": "product-hunt-cli",
+  "version": "0.0.1",
+  "description": "Product Hunt CLI to communicate with the API.",
+  "license": "MIT",
+  "repository": "kjbrum/ph",
+  "bin": {
+    "ph": "cli.js"
+  },
+  "preferGlobal": true,
+  "author": {
+    "name": "Kyle Brumm",
+    "email": "kjbrum@msn.com",
+    "url": "http://kylebrumm.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "files": [
+    "cli.js",
+    "index.js"
+  ],
+  "keywords": [
+    "product hunt",
+    "product",
+    "hunt",
+    "api",
+    "cli",
+    "bin",
+    "web"
+  ],
+  "dependencies": {
+    "chalk": "^1.0.0",
+    "got": "^5.0.0",
+    "lodash": "^3.10.1",
+    "meow": "^3.1.0"
+  }
+}
