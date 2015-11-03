@@ -5,11 +5,13 @@
 ### Install
 
 ```
-$ npm install -g ph
+$ npm install -g ph-cli
 ```
 
 ```
 $ ph --help
+
+    Gather information from Product Hunt using their API
 
     Usage:
         ph <endpoint> <options>

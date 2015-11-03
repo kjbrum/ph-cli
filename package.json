@@ -1,7 +1,7 @@
 {
-  "name": "product-hunt-cli",
+  "name": "ph-cli",
   "version": "0.0.1",
-  "description": "Product Hunt CLI to communicate with the API.",
+  "description": "Gather information from Product Hunt using their API",
   "license": "MIT",
   "repository": "kjbrum/ph",
   "bin": {
