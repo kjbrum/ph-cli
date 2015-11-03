@@ -29,5 +29,23 @@ $ ph --help
 
 ### To-Do
 
+- Prompt user for their dev token and add it to the script
+- Handle all the endpoints
+    - Posts
+    - Categories
+    - Users
+    - Me
+    - Collections
+    - Comments
+    - Notifications
+    - Live Events
+- Handle different endpoint options
+    - Day
+    - Days ago
+    - Search Category/URL
+    - Order
+    - Pagination
+
 ### License
+
 MIT © [Kyle Brumm](http://kylebrumm.com)
