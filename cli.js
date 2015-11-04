@@ -33,10 +33,22 @@ var cli = meow({
     ]
 });
 
+// Setup prompt
+prompt.colors = false;
+prompt.message = "";
+prompt.delimiter = "";
+prompt.override = cli.flags;
+
 // Check if an endpoint is supplied
 if( ! cli.input[0] ) {
     console.log( cli.help );
     process.exit( 1 );
+}
+
+// Check if we need to run the setup
+if( cli.input[0] == 'setup' ) {
+    setup();
+    // process.exit( 1 );
 }
 
 // Call the ph module
@@ -60,7 +72,6 @@ ph( cli.input[0], cli.flags ).then( function( res ) {
                 console.log( post.name + ' ' + post.votes );
                 console.log( chalk.magenta( '    ==> ' ) + post.tagline );
                 console.log( chalk.magenta( '    ==> ' ) + post.url );
-                // console.log( '' );
             });
             break;
         case 'users':
@@ -73,3 +84,26 @@ ph( cli.input[0], cli.flags ).then( function( res ) {
 
     process.exit( 0 );
 });
+
+// Function for setting things up
+function setup() {
+    // Display some helper text
+    console.log( warn( 'If you need to get a Product Hunt developer token visit: https://www.producthunt.com/v1/oauth/applications') );
+    console.log( '' );
+
+    // Prompt the user to input their developer token
+    prompt.start();
+    var properties = {
+        properties: {
+            token: {
+                description: "What is your developer token?".magenta
+            }
+        }
+    };
+    prompt.get( properties, function( err, result ) {
+        // Save the token input to a config file
+        console.log( '' );
+        console.log( success( 'Product Hunt CLI is set up!') );
+        console.log( warn( 'Type `ph --help` if you need help getting started.') );
+    });
+}

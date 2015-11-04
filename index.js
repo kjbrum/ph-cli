@@ -15,14 +15,15 @@ module.exports = function( endpoint, opts ) {
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + opts.token,
             'Host': 'api.producthunt.com'
-        },
-        query: {
-            'day': '2015-11-02'
         }
     };
 
+
     // TODO
     // Handle the opts here and add needed query vars to the url
+    // options.query = {
+    //     'day': '2015-11-02'
+    // };
 
     // Send the request to Product Hunt and return the data and endpoint
     return got( url, options ).then( function( res ) {
