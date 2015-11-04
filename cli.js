@@ -1,10 +1,12 @@
 #!/usr/bin/env node
 'use strict';
 
-var meow  = require('meow');
-var chalk = require('chalk');
-var _     = require('lodash');
-var ph    = require('./');
+var meow   = require('meow');
+var chalk  = require('chalk');
+var _      = require('lodash');
+var fs     = require('fs');
+var prompt = require('prompt');
+var ph     = require('./');
 
 // Setup colors
 var success = chalk.green;
