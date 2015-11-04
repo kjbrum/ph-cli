@@ -58,7 +58,7 @@ ph( cli.input[0], cli.flags ).then( function( res ) {
                 console.log( post.name + ' ' + post.votes );
                 console.log( chalk.magenta( '    ==> ' ) + post.tagline );
                 console.log( chalk.magenta( '    ==> ' ) + post.url );
-                console.log( '' );
+                // console.log( '' );
             });
             break;
         case 'users':

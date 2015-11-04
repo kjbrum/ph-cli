@@ -3,27 +3,29 @@ var got   = require('got');
 var chalk = require('chalk');
 
 module.exports = function( endpoint, opts ) {
-    if( typeof opts !== 'object' ) {
-        cb = opts;
-        opts = {};
-    }
-
     // Set the base url
-    var url = 'https://api.producthunt.com/v1/' + endpoint;
+    var base_url = 'https://api.producthunt.com/v1/';
+    var url = base_url + endpoint;
 
-    // TODO
-    // Handle the opts here and add needed query vars to the url
-
-    // Send the request to Product Hunt and return the data and endpoint
-    return got( url, {
+    // Set up our options
+    var options = {
         json: true,
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + opts.token,
             'Host': 'api.producthunt.com'
+        },
+        query: {
+            'day': '2015-11-02'
         }
-    }).then( function( res ) {
+    };
+
+    // TODO
+    // Handle the opts here and add needed query vars to the url
+
+    // Send the request to Product Hunt and return the data and endpoint
+    return got( url, options ).then( function( res ) {
         return {
             data: res.body,
             endpoint: endpoint
