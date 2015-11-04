@@ -18,7 +18,6 @@ module.exports = function( endpoint, opts ) {
         }
     };
 
-
     // TODO
     // Handle the opts here and add needed query vars to the url
     // options.query = {

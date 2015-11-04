@@ -53,7 +53,6 @@ if( cli.input[0] == 'setup' ) {
 
 // Call the ph module
 ph( cli.input[0], cli.flags ).then( function( res ) {
-
     switch( res.endpoint ) {
         case 'me':
             console.log( success( '==> Me' ) );
@@ -101,7 +100,15 @@ function setup() {
         }
     };
     prompt.get( properties, function( err, result ) {
+        if( err ) {
+            // TODO
+            // Throw an error message here
+            process.exit( 1 );
+        }
+
+        // TODO
         // Save the token input to a config file
+
         console.log( '' );
         console.log( success( 'Product Hunt CLI is set up!') );
         console.log( warn( 'Type `ph --help` if you need help getting started.') );
