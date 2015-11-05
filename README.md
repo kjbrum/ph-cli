@@ -50,6 +50,7 @@ $ ph --help
     - Order
     - Pagination
 - View current token using a flag (ph --config)
+- Add update notifier module
 
 
 ### License
