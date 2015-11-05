@@ -2,6 +2,7 @@
 
 > Gather information from Product Hunt using their API
 
+
 ### Install
 
 ```
@@ -29,6 +30,7 @@ $ ph --help
             The users developer token for authentication
 ```
 
+
 ### To-Do
 
 - Prompt user for their dev token and save it
@@ -47,6 +49,8 @@ $ ph --help
     - Search Category/URL
     - Order
     - Pagination
+- View current token using a flag (ph --config)
+
 
 ### License
 

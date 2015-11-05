@@ -2,7 +2,7 @@
 var got   = require('got');
 var chalk = require('chalk');
 
-module.exports = function( endpoint, opts ) {
+module.exports = function( endpoint, opts, token ) {
     // Set the base url
     var base_url = 'https://api.producthunt.com/v1/';
     var url = base_url + endpoint;
@@ -13,7 +13,7 @@ module.exports = function( endpoint, opts ) {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + opts.token,
+            'Authorization': 'Bearer ' + token,
             'Host': 'api.producthunt.com'
         }
     };
