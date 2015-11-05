@@ -39,6 +39,8 @@ prompt.message = "";
 prompt.delimiter = "";
 prompt.override = cli.flags;
 
+console.log();
+
 // Check if an endpoint is supplied
 if( ! cli.input[0] ) {
     console.log( cli.help );
@@ -48,7 +50,6 @@ if( ! cli.input[0] ) {
 // Check if we need to run the setup
 if( cli.input[0] == 'setup' ) {
     setup();
-    // process.exit( 1 );
 }
 
 // Call the ph module
@@ -77,7 +78,7 @@ ph( cli.input[0], cli.flags ).then( function( res ) {
             console.log( success( '==> Users' ) );
             break;
         default:
-            console.error( error( 'Error: ' ) + '"' + res.endpoint + '" is not a valid endpoint...' );
+            console.error( error( 'Error: "' + res.endpoint + '" is not a valid endpoint...' ) );
             process.exit( 1 );
     }
 
@@ -87,30 +88,32 @@ ph( cli.input[0], cli.flags ).then( function( res ) {
 // Function for setting things up
 function setup() {
     // Display some helper text
-    console.log( warn( 'If you need to get a Product Hunt developer token visit: https://www.producthunt.com/v1/oauth/applications') );
-    console.log( '' );
+    console.log( warn( 'Visit https://www.producthunt.com/v1/oauth/applications if you need a developer token...' ) );
 
     // Prompt the user to input their developer token
     prompt.start();
     var properties = {
         properties: {
             token: {
-                description: "What is your developer token?".magenta
+                description: 'What is your developer token?'.magenta
             }
         }
     };
     prompt.get( properties, function( err, result ) {
         if( err ) {
-            // TODO
-            // Throw an error message here
+            console.log( err );
             process.exit( 1 );
         }
 
         // TODO
         // Save the token input to a config file
+        console.log();
+        if( result.token ) {
+            console.log( success( 'Product Hunt CLI is set up!') );
+            console.log( warn( 'Type `ph --help` if you need help getting started.') );
+        } else {
+            console.log( error( 'Error: You didn\'t supply a developer token...' ) );
+        }
 
-        console.log( '' );
-        console.log( success( 'Product Hunt CLI is set up!') );
-        console.log( warn( 'Type `ph --help` if you need help getting started.') );
     });
 }
