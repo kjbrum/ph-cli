@@ -6,7 +6,7 @@
 ## Install
 
 ```
-$ curl https://raw.githubusercontent.com/kjbrum/ph-cli/master/ph > ~/bin/ph
+$ curl https://raw.githubusercontent.com/kjbrum/ph-cli/bash/ph > ~/bin/ph
 $ chmod +x ~/bin/ph
 ```
 
